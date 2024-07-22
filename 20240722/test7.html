@@ -6,40 +6,68 @@
     <title>Document</title>
     <style>
         #side{
-            width:300px;
-            height:750px;
+            width:231px;
+            height:800px;
             background-color: #ccc;
-            padding :50px 0px 80px 50px;
-            
+            padding:20px;
+            float : left;
         }
 
         #center{
-            width:300px;
-            height:750px;
-            background-color: whitesmoke;
-            margin : 20px auto;
-            padding : 50px 0px 80px 50px;
+            width : 800px;
+         height:800px;
+        background-color: whitesmoke;
+        float : left;
+        padding: 20px;
+        
             
         }
+        .image {
+            width : 200px;
+            height : 200px;
+            margin-left: 20px;
+            margin-right : 20px;
+        }
+
+        .graduation {
+            margin-left : 20px;
+        }
+
+        .back-color {
+            background-color: gray;
+        }
+        
 
     </style>
 </head>
 <body>
+    <div id ="continer">
+
+
+
+    </div>
 <aside id = "side">
-<img src = '../images/yussi.jpg' width="100px"  height="100px" >
+<img src = '../images/yussi.jpg' width="230px"  height="230px" >
 <H3><b>Y</b>u <b>J</b>aeseok</H3>
+<br>
 
 <div>incheon, Korea</div>
+<br>
 <div>test@naver.com</div>
 
 <H5>SNS</H5>
+
+<a href="https://www.instagram.com">클릭!</a>
+
 </aside>
 
 <section id="center">
 
     <h2>자기소개</h2>
     <div><mark>프로그래밍</mark>에 관심이 많습니다.</div>
+    <br>
     <div>열심히 코딩 중!</div>
+    <br>
     <hr>
     <div>
         <h2>Experience</h2>
@@ -59,6 +87,7 @@
                     <li>JAVA</li>
                     <li>database</li>
                     <li>c언어</li>
+                    <br>
                 </ul>
             </li>
         </ul>
@@ -70,13 +99,14 @@
             <li>자바</li>
             <li>오라클</li>
         </ul>
+        <br>
         <hr>
-
-        <caption>학력 사항</caption>
-           <table border="1">
-                <tr>
-                 <td>출신학교</td>
-                 <td>전공</td>
+            <br>
+           <caption>학력 사항</caption>
+           <table border="graduation">
+                <tr class="back-color">
+                    <td>출신학교</td>
+                    <td>전공</td>
                  <td>기간</td>
                   <td>구분</td>
                  </tr>
@@ -84,18 +114,21 @@
                  <tr>
                     <td>서울예술전문대학</td>
                     <td>방송연예과</td>
-                    <td>10대 후반</td>
+                    <td>20대</td>
                      <td>중퇴</td>
                  </tr>
 
                  <tr>
                     <td>용문고등학교</td>
                     <td>-</td>
-                    <td>20대</td>
+                    <td>10대 후반</td>
                      <td>졸업</td>
                  </tr>
             </table> 
 
+
+
+            
     </div>
 
 </section>
