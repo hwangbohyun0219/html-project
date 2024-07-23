@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src ="../images/image4.jfif" id="img1">
+    
+</body>
+</html>
+<script>
+    var obj = document.querySelector("#img1");
+    obj.onclick = function(e){
+        //alert("hi!");
+        // obj.src="images/image5.jfif";
+        // console.log("이벤트 유형 ==>", e.type);
+        // console.log("위치", e.pageX);
+        // console.log("y 위치", e.pageY);
+        // console.log(e);
+    }
+    obj.addEventListener("mouseover", () => {
+        obj.src = "images/image5.jfif";
+    });
+
+    obj.addEventListener("mouseout", () => {
+        obj.src = "../images/image4.jfif";
+    });
+
+
+
+    obj.addEventListener("mouseover", function(){alert("test");});
+    
+    function test(){
+        alert("test");
+    }
+</script>
