@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    
+    .box1{
+        border-radius: 40%;
+    }
     </style>
 </head>
 <body>
@@ -18,7 +20,6 @@
     <label>비밀번호 확인<input type = "text"  id = "passwordcheck"></label>
     </fieldset>
 
-
     <fieldset>
         <legend>개인 정보 </legend>
         <br>
@@ -26,11 +27,48 @@
         <br>
         <label>메일 주소 <input type = "text"  id = "mailaddr" placeholder="abcd@domain.com"></label>
         <br>
-        <label>연락처 <input type = "text"  id = "call"></label>
+        <label for="tel">연락처</label>
+        <input type = "text"  id = "tel" name="tel">
         <br>
-        <input type="button" value="제출" border-radius="70%">
+        <div class = "box1">
+        </div>
+        <button onclick = "fnJoin()">제출</button>
     </fieldset>
-
 
 </body>
 </html>
+<script>
+           function fnJoin(){
+        var userid = document.querySelector("#userid").value;
+        // id 체크
+        if(userid == ""){
+            alert("아이디를 입력해주세요.");
+            return;
+        }
+        var pwd1 = document.querySelector("#pwd1").value;
+        var pwd2 = document.querySelector("#pwd2").value;
+        // pwd 빈 값 체크
+        if(pwd1 == ""){
+            alert("비밀번호를 입력해주세요.");
+            return;
+        }
+        // pwd 5글자 이하 여부 체크
+        if(pwd1.length <= 5){
+            alert("비밀번호는 6글자 이상 입력해주세요");
+            return;
+        }
+        // pwd1, pwd2 같은지 체크
+        if(pwd1 != pwd2){
+            alert("비밀번호의 값이 서로 다릅니다");
+            return;
+        }
+        // 이름 빈값 체크
+        var fullname = document.querySelector("#fullname").value;
+        if(fullname == ""){
+            alert("이름을 입력해주세요.");
+            return;
+        }
+        alert("가입되었습니다!");
+    }
+​
+</script>

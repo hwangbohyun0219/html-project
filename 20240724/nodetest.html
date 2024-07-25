@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+       <input number="text1" id="col">행
+       <input number="text2" id="row">열
+        <button onclick="fnTable()">작성</button>
+        
+        <div id = "cotent"></div>
+        <!-- <table>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+
+
+            <tr>
+                <td></td>
+                <td></td>
+            </tr> -->
+        <!-- </table> -->
+    </div>
+
+</body>
+</html>
+<script>
+    function fnTable(){
+        var table = document.createElement("table");
+        var row = document.querySelector("tr");
+        var col = document.querySelector("td");
+
+        row.appendChild(col);
+        table.appendChild(row);
+
+        for(var i=0; i<col; i++){
+            var col = document.createElement("td");
+            for(var j=0; j<row; j++){
+                var row = document.createElement("tr");
+                row.innerHTML = i + "," + j;
+                row.appendChild(col);
+            }
+            table.appendChild(row);
+        }
+
+        var content = document.querySelector("#content");
+        content.appendChild(table);
+
+    }
+
+
+
+
+</script>

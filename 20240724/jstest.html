@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width:100px;
+            height:150px;
+            animation: rotate-axis 10s linear infinite;
+        }
+        .test{
+            width:120px;
+            height:120px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 20px ;
+        }
+
+        #test:hover{
+            animation: ani1;
+        }
+
+        @keyframes ani1 {
+            from{
+                
+            }
+            to{
+                
+            }
+        }
+
+
+        @keyframes ani3 {
+            100%{
+                transform:perspective(100px) rotateX(180deg) rotateY(180deg); 
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <img  class="test" src="../images/image4.jfif">
+    </div>
+</body>
+</html>
+<script>
+    
+</script>

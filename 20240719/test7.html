@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+
+
         #side{
             width:231px;
             height:800px;
@@ -41,7 +43,12 @@
 
         td, th {
             text-align: center;
+            border-collapse : collapse;
         }
+
+
+       
+
     </style>
 </head>
 <body>
@@ -62,7 +69,7 @@
 <H5>SNS</H5>
 
 <a href="https://www.instagram.com">클릭!</a>
-
+<div id ="time"></div>
 </aside>
 
 <section id="center">
@@ -135,3 +142,13 @@
 </section>
 </body>
 </html>
+<script>
+
+    setInterval(()=>{
+    var time = new Date();
+    var obj = document.querySelector("#time");
+    var datetime = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds()
+    obj.innerHTML=datetime;
+    },1000);
+
+</script>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box{
+            width:150px;
+            height:150px;
+            border:1px solid #eee;
+            display:inline-block;
+            margin:20px;
+            background-color: gainsboro;
+            transition:3s;
+        }
+        #box1:hover{
+            width:300px;
+            height:300px;
+            background-color:red;
+            transform:rotate(270deg);
+
+        }
+    </style>
+</head>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>트랜지션 실습 코드</title>
+  <style>
+    #ex div{
+      float:left;
+      width:100px;
+      height:50px;
+      margin:5px 10px;
+      padding:5px;
+      color:white;
+      background-color:#006aff;
+      border-radius:5px;
+      text-align:center;
+      font-weight:bold;	
+    }
+    #ex:hover div{
+      height:400px;
+    }
+    #ex .ease { /* 천천-빠름-천천 */
+      transition: 3s ease;
+    }
+    #ex .linear{ /* 등속 */
+      transition:3s linear;
+    }
+    #ex .ease-in{ /* 천천-보통 */
+      transition:3s ease-in;
+    }
+    #ex .ease-out{ /* 보통-천천 */
+      transition:3s ease-out;
+    }
+    #ex .ease-in-out{ /* 천천-보통-천천 */
+      transition:3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="ex">
+    <div class="ease"> ease </div>
+    <div class="linear"> linear </div>
+    <div class="ease-in"> ease-in </div>
+    <div class="ease-out"> ease-out </div>
+    <div class="ease-in-out"> ease-in-out </div>
+  </div>
+</body>
+</html>
+​
+<body>
+    <div class="box" id="box1"> </div>
+</body>
+</html>
