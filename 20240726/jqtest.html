@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <label><input type="checkbox" checked><span>자바</span></label><br>
+    <label><input type="checkbox"><span>오라클</span></label><br>
+    <label><input type="checkbox"><span>html/css/javascript</span></label><br>
+    <label><input type="checkbox"><span>jQuery</span></label>
+
+    <br>
+
+    <div>
+        <button id="btn">클릭!</button>
+    </div>
+
+</body>
+</html>
+<script>
+
+    $('#btn').on("click",()=>{
+        $(":checked").next().css("image","bookphoto/bookimage1.jpg");
+        $(":checked").next().css("image","bookphoto/bookimage2.jpg");
+        $(":checked").next().css("image","bookphoto/bookimage3.jpg");
+        $(":checked").next().css("image","bookphoto/bookimage4.jpg");
+    });
+
+
+</script>

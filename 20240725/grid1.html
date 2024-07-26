@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display:grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-rows: minmax(100px, auto);
+            grid-gap:20px 30px; /*grid-gap : 20px 30px; */
+        }
+
+        .txt{
+            padding:10px;
+            background-color: cornflowerblue;
+        }
+        .txt:nth-child(odd){
+            background-color: forestgreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitam vehicula consedit, miserum logikh. Uberius firmam statuat sapientium vidisse complexiones vivi quo sanciret philosophis honeste.</div>
+        <div class="txt">Persius cognitione telos mortis, amici theophrastus fuissent sentiri audiebamus, generis praesertim.</div>
+        <div class="txt">Numquidnam consecutus praeter consulatu minuendas ad verissimum tractat cursus gratiam.</div>
+        <div class="txt"> Theatro cupiditatum existimavit molestiam recte, quantus contemnit.</div>
+        <div class="txt">Frui ob honoris, quaerenda liberemus dolores praeclarorum statua incommoda profecto.</div>
+    </div>
+</body>
+</html>
