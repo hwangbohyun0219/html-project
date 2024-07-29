@@ -6,31 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    <img src ="../images/image4.jfif" id="img1">
-    
+    <img src="../bookphoto/bookimage1.jpg" id="img1">
 </body>
 </html>
 <script>
     var obj = document.querySelector("#img1");
     obj.onclick = function(e){
-        //alert("hi!");
-        // obj.src="images/image5.jfif";
-        // console.log("이벤트 유형 ==>", e.type);
-        // console.log("위치", e.pageX);
-        // console.log("y 위치", e.pageY);
-        // console.log(e);
+        obj.src="media/yu.jpg";
+        console.log("이벤트 유형 ==> ", e.type);
+        console.log("x 위치", e.pageX);
+        console.log("y 위치", e.pageY);
+        console.log(e);
     }
     obj.addEventListener("mouseover", () => {
-        obj.src = "images/image5.jfif";
+        obj.src = "../bookphoto/bookimage2.jpg";
     });
-
     obj.addEventListener("mouseout", () => {
-        obj.src = "../images/image4.jfif";
+        obj.src = "../bookphoto/bookimage3.jpg";
     });
-
-
-
     obj.addEventListener("mouseover", function(){alert("test");});
+    obj.addEventListener("mouseover", test);
     
     function test(){
         alert("test");
