@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app"> 
+        <div>
+            <label >아이디 <input type="text" placeholder="아이디" v-model="user.id"></label>
+        </div>
+        <div>
+            <label>비밀번호 <input type="text" placeholder="비밀번호" v-model="user.pwd"></label>
+        </div>
+        <div>
+            <label >이름 <input type="text" placeholder="이름" v-model="user.name"></label>
+        </div>
+        <div>
+            <label>메일 <input type="text" placeholder="메일" v-model="user.mail"></label>
+        </div>
+        <div>
+            <label >전화번호 <input type="text" placeholder="전화번호" v-model="user.phone"></label>
+        </div>
+        <div>
+            <label>성별 <input type="text" placeholder="성별" v-model="user.gender"></label>
+        </div>
+        <button @click="fnHost">회원가입</button>
+    </div>
+</body>
+</html>
+<script>
+    const app = Vue.createApp({
+            data() {
+                return {
+                    // 변수 영역, ex) name : '홍길동', age : 20
+                    user : {    //사용자 정보 맵
+                        id: "",    
+                        pwd: "",
+                        name: "",
+                        mail: "",
+                        phone: "",
+                        gender: ""    
+                    }
+                };
+            },
+            methods: {
+               // 메소드 영역 
+                fnHost() {
+                    var self = this;
+                    if(self.user.id.length != 5){
+                    alert("아이디는 5글자 이상");
+                    }
+
+                    if(self.user.pwd.length != 6){
+                    alert("비밀번호는 6글자 이상");
+                    }
+                    return;
+
+
+                $.ajax({
+                    url: "http://localhost:3000/Host",
+                    dataType: "json",
+                    type: "POST",
+                    data: JSON.stringify(self.user),
+                    contentType:"application/json",
+                    success: function (data) {
+                        console.log(data);
+                        alert("아이디/패스워드를 다시 확인해주세요.")
+                        
+                    }
+                });
+               }
+            },
+
+
+            
+            mounted() {
+                // 처음 시작할 때 실행되는 부분
+                
+            }
+    })
+        app.mount('#app');
+</script>

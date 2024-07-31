@@ -95,7 +95,7 @@
             methods: {
                 fnGetList() {
                     var self = this;
-                    var url = `http://localhost:3000/list?keyword=${self.keyword}&grade=${self.stuGrade}`
+                    var url = "http://localhost:3000/list?keyword=${self.keyword}&grade=${self.stuGrade}"
                     $.ajax({
                         url: url,
                         dataType: "json",
@@ -118,7 +118,7 @@
                     };
                     
                     var self = this;
-                    var url = `http://localhost:3000/delete?stuNo=${stuNo}`
+                    var url = "http://localhost:3000/delete?stuNo=${stuNo}"
                     $.ajax({
                         url: url,
                         dataType: "json",
@@ -129,7 +129,7 @@
                             self.fnGetList();
                         }
                     });
-                }
+                },
 
             },
             mounted() {
@@ -140,5 +140,4 @@
         app.mount('#app');
     </script>
 </body>
-
 </html>
