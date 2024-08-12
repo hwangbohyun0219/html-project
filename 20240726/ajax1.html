@@ -21,8 +21,6 @@
 <body>
 <button id="btn">호출!</button>
 <div id="contents"></div>
-
-
 </body>
 </html>
 <script>
@@ -33,8 +31,10 @@
             type:"GET",
             data:{},
             success:function(data){
+
                 var table = document.createElement(table);
                 //<table></table>
+
                 for(var i=0; i<data.length; i++){
                     var row = document.createElement("tr");
                     row.innerHTML=
@@ -44,8 +44,10 @@
                     + "<td>" + data[i].website + "</td>";
                         table.appendChild(row);
                 }
+
                 var contents=document.getElementById("contents");
                 contents.appendChild(table);
+                
             }
         });
     });

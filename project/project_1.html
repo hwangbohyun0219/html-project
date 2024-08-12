@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- ////////1.watch파워포인트에서 만들어서 그림으로 삽입하기 -->
+     <!-- ////////2. input가운데 정렬하기 -->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+    button {
+        font-family: "Gugi", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .box1 {
+        width : 400px;
+        height : 450px;
+        margin : 20px auto;
+        box-shadow: 2px 2px 5px 2px gainsboro;
+        border-style : solid;
+        border-color : gainsboro;
+        padding : 20px;
+        margin-bottom: 14px;
+    }
+    .box2 {
+        width : 400px;
+        height : 70px;
+        margin : 20px auto;
+        box-shadow: 2px 2px 5px 2px gainsboro;
+        border-style : solid;
+        border-color : gainsboro;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+</style>
+</head>
+<body>
+    
+    <div id="login">
+        <form>
+            <div class="box1">
+
+                <fieldset>
+                    <input type="text"  placeholder="아이디를 입력하시오" id="Id">
+                </fieldset>
+                <fieldset>
+                    <input type="password" placeholder="비밀번호를 입력하시오" id="pwd">
+                </fieldset>
+                </div>
+        </form>
+            <div class= "box2">
+                <a href="login.html">
+                    <button>로그인</button>
+                <!-- //바로 사이트 접속  -->
+                </a>
+                <a href="login2.html">
+                <button>회원가입</button>
+                <!-- //회원가입하는 창으로 이동 후, 성별 고르고, 나이 선택하고, 추가 정보 입력하고, 로그인 창으로 이동 -->
+                </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+    legend {
+        text-align: center;
+        font-family: "Gugi", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    #box1 {
+        border-style : solid;
+        box-shadow : 2px 2px 5px 2px gainsboro;
+        border-color : gainsboro;
+        margin : 20px auto;
+        padding : 20px 20px;
+    }
+    .box2 {
+        float : left;
+        font-size : 13px;
+        width : 110px;
+        padding : 20px 20px;
+    }
+    .box3 {
+        float : bottom;
+        font-size : 13px;
+        width: 30px;
+    }
+</style>
+</head>
+<!-- //////1.자바스크립트 이용하여 인풋에 정보를 모두 입력했을 때에만 로그인 창으로 넘어갈 수 있게 하기
+//////2.자바 스크립트 이용하여 각 input에 조건 추가하고 경고문 날리게 하기  -->
+<!-- //////3. 가운데 정렬 -->
+<body>
+    <form>
+        <div id="box1">
+            <div class="box2">
+                <fieldset>
+                    <legend>회원가입</legend>
+                    <li>
+                        <label>이름</label>
+                        <input type="text" placeholder="이름을 입하세요" id="pwd">
+                    </li>
+                    <li>
+                        <label>아이디</label>
+                        <input type="text"  placeholder="숫자포함 8자 이상" id="Id">
+                    </li>
+                    <li>
+                        <label>비밀번호</label>
+                        <input type="password" placeholder="특수문자(!,?*&)포함 8자 이상" id="pwd">
+                    </li>
+                    <li>
+                        <label>비밀번호 확인</label>
+                        <input type="password" placeholder="비밀번호를 확인세요" id="pwdCheck">
+                    </li>
+                    <li>
+                        <label>이메일</label>
+                        <input type="text" placeholder="이메일 형식을 지켜주세요" id="emaill" required>
+                            @
+                            <select id="prod1">
+                                <option value="mail_1">naver.com</option>
+                                <option value="mail_2">gmail.com</option>
+                                <option value="mail_3">hanmail.net</option>
+                            </select>
+                        
+                    </li>
+                    <li>
+                        <label>주소</label>
+                        <input type="text" placeholder="주소를 입력하세요" id="addr" required>
+                    </li>
+                    <li>
+                        <label>가입날짜 </label>
+                        <input type="date" required>
+                    </li>
+                </fieldset>
+            </div>
+            <div class="box3">
+            <fieldset>
+                <legend>광고/수신 동의</legend>
+                <li>
+                    <input type="radio" name="adv" id="adv_1" checked>
+                    <label for="adv-1">동의함</label>
+                    <input type="radio" name="adv" id="adv_2">
+                    <label for="adv-2">동의하지 않음</label>
+                </li>    
+            </fieldset>
+            </div>
+        </div>
+    </form>
+        <a href="login.html">
+            <button>로그인 하러 가기</button>
+        </a>
+
+</body>
+</html>
