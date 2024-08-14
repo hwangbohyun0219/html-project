@@ -3,101 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Document</title>
-<style>
+</head>
+<!-- 회원가입 창-->
+ <style>
     @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
 
-    legend, label {
-        text-align: center;
-        font-family: "Gugi", sans-serif;
-        font-weight: 400;
-        font-style: normal;
+    body, input {
+        font-family:"Gugi", sans-serif;
+        font-weight:400;
+        font-style:normal;
     }
-    /* #box1 {
-        border-style : solid;
-        box-shadow : 2px 2px 5px 2px gainsboro;
-        border-color : gainsboro;
-        margin : 20px auto;
-        padding : 20px 20px; */
-    /* } */
-    .box2 {
+    ul {
+        list-style:none;
+    }
+    #center {
         float:left;
-        font-size:13px;
-        width:110px;
-        padding:20px 120px 20px 20px;
-        background-color:whitesmoke;
-        border-radius:10px;
-        margin:60px 160px; 
-        margin-bottom: 30px;
-        box-shadow: 2px 2px 5px 7px whitesmoke;
-        text-align: center;
-      
+        width:300px;
+        font-size:17px;
     }
-    body{
-        background:url('../project_image/star3.jpg') left top no-repeat fixed;
-        background-size:cover;
+    .box1 {
+        width : 600px;
+        height : 300px;
+        margin : 250px auto;
+        box-shadow: 3px 2px 8px 4px grey;
+        border-style : solid;
+        border-color : grey;
+        padding : 20px 20px;
+        margin-bottom: 14px;
+        background-color : grey;
     }
-</style>
-</head>
-<!-- //////1.자바스크립트 이용하여 인풋에 정보를 모두 입력했을 때에만 로그인 창으로 넘어갈 수 있게 하기
-//////2.자바 스크립트 이용하여 각 input에 조건 추가하고 경고문 날리게 하기  -->
-<!-- //////3. 가운데 정렬 -->
+    #bt {
+        padding:5px 15px;
+        margin: 42px 255px;
+    }
+    body {
+        background : url('../project_image/project_photo6.jpg') left top no-repeat fixed;
+        background-size : cover;
+    }
+ </style>
 <body>
-    <form>
-        <div id="box1">
-            <div class="box2">
-                    <legend>회원가입</legend>
-                    <li>
-                        <label>이름</label>
-                        <input type="text" placeholder="이름을 입하세요" id="pwd">
-                    </li>
-                    <li>
-                        <label>비밀번호</label>
-                        <input type="password" placeholder="대문자 포함 8자 이상" id="pwd">
-                    </li>
-                    <li>
-                        <label>비밀번호 확인</label>
-                        <input type="password" placeholder="비밀번호를 확인세요" id="pwdCheck">
-                    </li>
-                    <li>
-                        <label>생년월일</label>
-                        <input type="date" required>
-                    </li>
-                    <li>
-                        <label>핸드폰번호</label>
-                        <input type="text" placeholder="핸드폰번호를 입력하세요" id="tel">
-                    </li>
-                    <li>
-                        <label>이메일</label>
-                        <input type="text" placeholder="이메일 형식을 지켜주세요" id="emaill" required>
-                            @
-                            <select id="prod1">
-                                <option value="mail_1">naver.com</option>
-                                <option value="mail_2">gmail.com</option>
-                                <option value="mail_3">hanmail.net</option>
-                            </select>
-                        
-                    </li>
-                    <li>
-                        <label>주소</label>
-                        <input type="text" placeholder="주소를 입력하세요" id="addr" required>
-                    </li>
-                    <li>
-                        <label>가입날짜 </label>
-                        <input type="date" required>
-                    </li>
-                <legend>광고/수신 동의</legend>
-                <li>
-                    <input type="radio" name="adv" id="adv_1" checked>
-                    <label for="adv-1">동의함</label>
-                    <input type="radio" name="adv" id="adv_2">
-                    <label for="adv-2">동의하지 않음</label>
-                </li>    
-            </div>
-        </div>
-    </form>
-    
-    
-
+    <div class="box1">
+        <form>
+            <fieldset class="box2">
+                <legend>JOIN US</legend>
+                    <ul id="center">
+                        <li>
+                            <label>
+                                ID<input type="text" id="Id">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                PW<input type="password" id="pwd">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                PW-CHECK<input type="password" id="pwdcheck">
+                            </label>
+                            <button>MULTI-CHECK</button>
+                        </li>
+                        <li>  
+                            <label>
+                                NAME<input type="text" id="name">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                BIRTH<input type="date">
+                            </label>
+                        </li>
+                        <li>
+                            GENDER
+                            <label><input type="radio" name="gender" value="M" checked>MEN</label>
+                            <label><input type="radio" name="gender" value="W">WONMEN</label>
+                        </li>
+                        <li>
+                            TEL(ONLY NUMBER)<input type="text" id="tel">
+                        </li>
+        </form>
+        
+                        <li>
+                            <label>
+                                EMAIL<input type="text" id="email">
+                                <select>
+                                    <option value="email1">@naver.com</option>
+                                    <option value="email2">@gmail.com</option>
+                                    <option value="email3">@daum.net</option>
+                                    <option value="email4">@nate.com</option>
+                                </select>
+                            </label>
+                        </li>
+                    </ul>
+            </fieldset> 
+            <input type="button" value="JOIN" id="bt" onclick="window.open('project_1.html')">
+    </div>
 </body>
 </html>
+<script>
+    const app=Vue.createapp({
+        data() {
+            return {}
+                isCheck:false,
+                info : {
+                    ID:"",
+                    PW:"",
+                    PW-CHECK:"",
+                    NAME:"",
+                    
+                }
+            }
+        }
+    });
+
+    app.mount('#app');
+</script>

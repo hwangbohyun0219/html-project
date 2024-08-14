@@ -4,38 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- ////////1.watch파워포인트에서 만들어서 그림으로 삽입하기 -->
-     <!-- ////////2. input가운데 정렬하기 -->
+     <!-- ////1. input가운데 정렬하기 -->
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
 
     button {
-        font-family: "Gugi", sans-serif;
-        font-weight: 400;
-        font-style: normal;
+        font-family : "Gugi", sans-serif;
+        font-weight : 400;
+        font-style : normal;
+        font-size : 20px;
+        margin : 20px 100px;
+        padding : 5px 5px;
+        background-color: gainsboro;
     }
-
+    input {
+        font-family : "Gugi", sans-serif;
+        font-weight : 400;
+        font-style : normal;
+    }
     .box1 {
         width : 400px;
         height : 450px;
-        margin : 20px auto;
-        box-shadow: 2px 2px 5px 2px gainsboro;
+        margin : 200px auto;
+        box-shadow: 3px 2px 8px 4px grey;
         border-style : solid;
-        border-color : gainsboro;
-        padding : 20px;
+        border-color : grey;
+        padding : 20px 20px;
         margin-bottom: 14px;
+        background-color : grey;
     }
     .box2 {
         width : 400px;
         height : 70px;
-        margin : 20px auto;
-        box-shadow: 2px 2px 5px 2px gainsboro;
+        margin : 60px auto;
+        box-shadow: 3px 2px 8px 4px grey;
         border-style : solid;
-        border-color : gainsboro;
-        padding-left: 20px;
-        padding-right: 20px;
+        border-color : grey;
+        padding-left: 5px; 
+        padding-right: 5px; 
+        background-color : grey;
     }
+    fieldset {
+        margin : 120px 80px;
+        border : none;
 
+    }
+    .fd1 {
+        border-top-left-radius: 10px;
+        border-top-right-radius : 10px;
+        margin : 110px;
+    }
+    .fd2 {
+        border-bottom-left-radius : 10px;
+        border-bottom-right-radius : 10px;
+        font-size : 20px;
+    }
+    #Id {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        font-size : 20px;
+    }
+    #pwd {
+        border-bottom-left-radius : 10px;
+        border-bottom-right-radius : 10px;
+        font-size : 20px;
+    }
+    body {
+        background : url('../project_image/project_photo6.jpg') left top no-repeat fixed;
+        background-size : cover;
+    }
 </style>
 </head>
 <body>
@@ -43,25 +80,28 @@
     <div id="login">
         <form>
             <div class="box1">
-
-                <fieldset>
-                    <input type="text"  placeholder="아이디를 입력하시오" id="Id">
+                <fieldset id="fd1">
+                    <input type="text"  placeholder="ID" id="Id">
                 </fieldset>
-                <fieldset>
-                    <input type="password" placeholder="비밀번호를 입력하시오" id="pwd">
+                <fieldset id="fd2">
+                    <input type="password" placeholder="PW" id="pwd">
                 </fieldset>
                 </div>
         </form>
             <div class= "box2">
-                <a href="login.html">
-                    <button>로그인</button>
-                <!-- //바로 사이트 접속  -->
-                </a>
-                <a href="login2.html">
-                <button>회원가입</button>
-                <!-- //회원가입하는 창으로 이동 후, 성별 고르고, 나이 선택하고, 추가 정보 입력하고, 로그인 창으로 이동 -->
-                </a>
+                <div class="form-group">
+                    <button @click="fnIdCheck">login</button>
+                <!-- //바로 사이트 접속 //자바스크립트 -->
+                </div>
+                <div class="form_group">
+                <button @click="fnPwCheck">join us</button>
+                <!-- //회원가입하는 창으로 이동 후, 로그인창//자바스크립트 -->
+                </div>
         </div>
     </div>
 </body>
 </html>
+<script>
+
+
+</script>

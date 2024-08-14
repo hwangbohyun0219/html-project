@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+     body {
+        font-family : "Gugi", sans-serif;
+        font-weight : 400;
+        font-style : normal;
+        background-image:url('../project_image/project_photo33.jpg');
+        background-repeat:repeat;
+     }
+     #container {
+        width:1200px;
+        margin:20px auto;
+     }
+     #header {
+        width:100%;
+        height:120px;
+        background-color:aliceblue;
+     }
+     #sidebar {
+        width:250px;
+        height:800px;
+        background-color:gainsboro;
+        float:left;
+     }
+     #contents {
+        width:950px;
+        height:800px;
+        background-color:ghostwhite;
+        float:left;
+     }
+     #footer {
+        width:100%;
+        height:100px;
+        background-color:gray;
+        clear:left;
+     }
+     #cart {
+        width:67px;
+        height:67px;
+     }
+     #home {
+        width:67px;
+        height:67px;
+        border-radius:50%;
+     }
+</style>
+<body>
+    <div id="container">
+    <header id="header">watch</header>
+        <sidebar id="sidebar">
+            <a href="../project/drive.html"> 
+                <input type="image" src="../project_image/shoppingcart.jpg" alt="CART" id="cart">
+            </a>
+            <a href="../project/login.html">
+                <input type="image" src="../project_image/blackhole.jpg" alt="HOME" id="home">
+            </a>
+         </sidebar>
+    <contents id="contents" class="">
+        <input type="image" value="CLOCK1" src="../project_image/clock1.PNG">
+        <input type="image" value="CLOCK2" src="../project_image/clock2.PNG">    
+    </contents>
+    <footer id="footer">
+
+    </footer>
+    </div>
+</body>
+</html>
