@@ -22,22 +22,23 @@
     #center {
         float:left;
         width:300px;
+        height:255px;
         font-size:17px;
     }
-    .box1 {
+    .form-group {
         width : 600px;
         height : 300px;
         margin : 250px auto;
         box-shadow: 3px 2px 8px 4px grey;
         border-style : solid;
         border-color : grey;
-        padding : 20px 20px;
+        padding : 50px 30px;
         margin-bottom: 14px;
         background-color : grey;
     }
-    #bt {
+    #bt2 {
         padding:5px 15px;
-        margin: 42px 255px;
+        margin: 5px 255px;
     }
     body {
         background : url('../project_image/project_photo6.jpg') left top no-repeat fixed;
@@ -45,81 +46,102 @@
     }
  </style>
 <body>
-    <div id="app">
-    <div class="box1">
-        <form>
-            <fieldset class="box2">
-                <legend>JOIN US</legend>
-                    <ul id="center">
-                        <li>
-                            <label>
-                                ID<input type="text" id="Id">
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                PW<input type="password" id="pwd">
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                PW-CHECK<input type="password" id="pwdcheck">
-                            </label>
-                            <button>MULTI-CHECK</button>
-                        </li>
-                        <li>  
-                            <label>
-                                NAME<input type="text" id="name">
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                BIRTH<input type="date">
-                            </label>
-                        </li>
-                        <li>
-                            GENDER
-                            <label><input type="radio" name="gender" value="M" checked>MEN</label>
-                            <label><input type="radio" name="gender" value="W">WONMEN</label>
-                        </li>
-                        <li>
-                            TEL(ONLY NUMBER)<input type="text" id="tel">
-                        </li>
-        </form>
-        
-                        <li>
-                            <label>
-                                EMAIL<input type="text" id="email">
-                                <select>
-                                    <option value="email1">@naver.com</option>
-                                    <option value="email2">@gmail.com</option>
-                                    <option value="email3">@daum.net</option>
-                                    <option value="email4">@nate.com</option>
-                                </select>
-                            </label>
-                        </li>
-                    </ul>
-            </fieldset> 
-            <input type="button" value="JOIN" id="bt" onclick="window.open('project_1.html')">
+<div id="app">
+    <div class="form-group">
+        <ul id="center">
+            <li>
+                <label>
+                    ID<input type="text" id="Id" v-model="info.ID">
+                </label>
+            </li>
+            <li>
+                <label>
+                    PW<input type="password" id="pwd" v-model="info.PW">
+                </label>
+            </li>
+            <li>
+                <label>
+                    PWCHECK<input type="password" id="pwdcheck" v-model="info.PWCHECK">
+                </label>
+                <button @onclick="fnIdCheck" id="bt1">MULTICHECK</button>
+            </li>
+            <li>  
+                <label>
+                    NAME<input type="text" id="name" v-model="info.NAME">
+                </label>
+            </li>
+            <li>
+                <label>
+                    BIRTH<input type="date" v-model="info.BIRTH">
+                </label>
+            </li>
+            <li>
+                GENDER
+                <label><input type="radio" name="gender" value="M" checked v-model="info.GENDER">MEN</label>
+                <label><input type="radio" name="gender" value="W" v-model="info.GENDER">WONMEN</label>
+            </li>
+            <li>
+                TEL(ONLY NUMBER)<input type="text" id="tel" v-model="info.TEL">
+            </li>
+            <li>
+                <label>
+                    EMAIL<input type="text" id="email" v-model="info.EMAIL">
+                    <select>
+                        <option value="email1">@naver.com</option>
+                        <option value="email2">@gmail.com</option>
+                        <option value="email3">@daum.net</option>
+                        <option value="email4">@nate.com</option>
+                    </select>
+                </label>
+            </li>
+        </ul>
+      <button @onclick="fnSubmit" id="bt2">JOIN</button>
     </div>
-    </div>
+</div>
 </body>
 </html>
 <script>
     const app=Vue.createapp({
         data() {
-            return {}
-                isCheck:false,
+            return {
+                // isCheck:false,
                 info : {
                     ID:"",
                     PW:"",
-                    PW-CHECK:"",
+                    PWCHECK:"",
                     NAME:"",
                     
                 }
-            }
-        }
-    });
+            };
+        },
+   
 
-    app.mount('#app');
+methods:{
+    fnIdCheck() {
+        var self = this;
+        
+    },
+
+
+    fnSubmit() {
+        var self = this;
+        if(!self.ischeck) {
+            alert("중복체크가 안 되었습니다");
+            return;
+        }
+        $.ajax({
+            url:"http://localhost:3000/insert",
+            dataType:"json",
+            type:"POST",
+            data:JSON.stringify(self.info),
+            contentType:"application/json",
+            success:function(data){ }
+        });
+    }
+},
+    mounted(){
+
+    }
+});
+app.mount('#app');
 </script>
