@@ -13,9 +13,10 @@
         font-weight : 400;
         font-style : normal;
         font-size : 20px;
-        margin : 20px 100px;
         padding : 5px 5px;
-        background-color: gainsboro;
+        background-color : gainsboro;
+        margin : 80px 30px;
+        
     }
     input {
         font-family : "Gugi", sans-serif;
@@ -34,14 +35,13 @@
         background-color : grey;
     }
     .box2 {
-        width : 400px;
-        height : 70px;
+        width : 386px;
+        height : 30px;
         margin : 60px auto;
         box-shadow: 3px 2px 8px 4px grey;
         border-style : solid;
         border-color : grey;
-        padding-left: 10px; 
-        padding-right: 10px; 
+        padding:30px 30px;
         background-color : grey;
     }
     fieldset {
@@ -90,11 +90,13 @@
         </form>
             <div class= "box2">
                 <div class="form-group">
-                    <button @click="fnIdCheck">login</button>
+                    <button @click="fnIdCheck" id="button1">login</button>
                 <!-- //바로 사이트 접속 //자바스크립트 -->
                 </div>
                 <div class="form_group">
-                <button @click="fnPwCheck">join us</button>
+                    <a href="../project/login2.html">
+                    <button >join us</button>
+                    </a>
                 <!-- //회원가입하는 창으로 이동 후, 로그인창 //자바스크립트 -->
                 </div>
         </div>
@@ -102,6 +104,5 @@
 </body>
 </html>
 <script>
-
 
 </script>

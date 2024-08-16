@@ -16,6 +16,9 @@
         font-weight:400;
         font-style:normal;
     }
+    input {
+        border-radius:7px 7px 7px 7px;
+    }
     ul {
         list-style:none;
     }
@@ -49,44 +52,35 @@
 <div id="app">
     <div class="form-group">
         <ul id="center">
+            <li>  
+                <label>
+                    NAME<input type="text" id="name" v-model="info.NAME">
+                </label>
             <li>
                 <label>
                     ID<input type="text" id="Id" v-model="info.ID">
                 </label>
             </li>
             <li>
-                <label>
-                    PW<input type="password" id="pwd" v-model="info.PW">
+                <label>PW
+                    <input v-if="!ischeck" type="password" id="pwd" v-model="info.PWD">
+                    <input v-else type="password" id="pwd" v-model="info.PWD">
                 </label>
             </li>
-            <li>
-                <label>
-                    PWCHECK<input type="password" id="pwdcheck" v-model="info.PWCHECK">
-                </label>
-                <button @onclick="fnIdCheck" id="bt1">MULTICHECK</button>
-            </li>
-            <li>  
-                <label>
-                    NAME<input type="text" id="name" v-model="info.NAME">
-                </label>
-            </li>
-            <li>
-                <label>
-                    BIRTH<input type="date" v-model="info.BIRTH">
-                </label>
-            </li>
-            <li>
-                GENDER
-                <label><input type="radio" name="gender" value="M" checked v-model="info.GENDER">MEN</label>
-                <label><input type="radio" name="gender" value="W" v-model="info.GENDER">WONMEN</label>
+                <button @click="fnIdCheck" id="bt1">MULTICHECK</button>
             </li>
             <li>
                 TEL(ONLY NUMBER)<input type="text" id="tel" v-model="info.TEL">
             </li>
             <li>
                 <label>
+                    BIRTHDAY<input type="date" v-model="info.BIRTHDAY">
+                </label>
+            </li>
+            <li>
+                <label>
                     EMAIL<input type="text" id="email" v-model="info.EMAIL">
-                    <select>
+                    <select  v-model="info.emailDomain">
                         <option value="email1">@naver.com</option>
                         <option value="email2">@gmail.com</option>
                         <option value="email3">@daum.net</option>
@@ -94,23 +88,31 @@
                     </select>
                 </label>
             </li>
+            <li>
+                <label>
+                    REG_DATE<input type="date" v-model="info.REG_DATE">
+                </label>
+            </li>
         </ul>
-      <button @onclick="fnSubmit" id="bt2">JOIN</button>
+      <button @click="fnSubmit" id="bt2">JOIN</button>
     </div>
 </div>
 </body>
 </html>
 <script>
-    const app=Vue.createapp({
+    const app=Vue.createApp({
         data() {
             return {
-                // isCheck:false,
+                isCheck:false,
                 info : {
-                    ID:"",
-                    PW:"",
-                    PWCHECK:"",
                     NAME:"",
-                    
+                    ID:"",
+                    PWD:"",
+                    TEL:"",
+                    BIRTHDAY: "",
+                    EMAIL: "",
+                    emailDomain: "@naver.com",
+                    REG_DATE:"",
                 }
             };
         },
@@ -119,24 +121,45 @@
 methods:{
     fnIdCheck() {
         var self = this;
-        
+        if(self.info.ID.length != 6) {
+            alert("아이디는 6글자 이상만 허용합니다.");
+            return;
+        }
+        var url = `http://localhost:3000/idCheck?ID=${self.info.ID}`
+                $.ajax({
+                    url: url,
+                    dataType: "json",
+                    type: "GET",
+                    success: function data() {
+                        if(data[0].CNT > 0) {
+                            alert("이미 사용중인 아이디입니다.");
+                        }else {
+                            alert("사용가능한 아이디입니다.");
+                            self.isCheck=true;
+                        }
+                    }
+                });   
     },
 
 
     fnSubmit() {
         var self = this;
-        if(!self.ischeck) {
+        if(!self.isCheck) {
             alert("중복체크가 안 되었습니다");
             return;
         }
         $.ajax({
-            url:"http://localhost:3000/insert",
-            dataType:"json",
-            type:"POST",
-            data:JSON.stringify(self.info),
-            contentType:"application/json",
-            success:function(data){ }
-        });
+                    url: "http://localhost:3000/insert",
+                    type: "POST",
+                    data: JSON.stringify(self.info),
+                    contentType: "application/json",
+                    success: function(data) {
+                        alert("회원가입 성공");
+                    },
+                    error: function() {
+                        alert("회원가입 실패");
+                    }
+                });
     }
 },
     mounted(){
