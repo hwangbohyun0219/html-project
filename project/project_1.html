@@ -8,15 +8,14 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
 
-    button {
+    .form-group button {
         font-family : "Gugi", sans-serif;
         font-weight : 400;
         font-style : normal;
         font-size : 20px;
         padding : 5px 5px;
         background-color : gainsboro;
-        margin : 80px 30px;
-        
+        margin : 5px 60px;
     }
     input {
         font-family : "Gugi", sans-serif;
@@ -43,6 +42,7 @@
         border-color : grey;
         padding:30px 30px;
         background-color : grey;
+        display: flex;
     }
     fieldset {
         margin : 120px 80px;
@@ -59,12 +59,12 @@
         border-bottom-right-radius : 10px;
         font-size : 20px;
     }
-    #Id {
+    #ID {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         font-size : 20px;
     }
-    #pwd {
+    #PWD {
         border-bottom-left-radius : 10px;
         border-bottom-right-radius : 10px;
         font-size : 20px;
@@ -76,26 +76,25 @@
 </style>
 </head>
 <body>
-    
-    <div id="login">
+    <div id="app">
         <form>
             <div class="box1">
                 <fieldset id="fd1">
-                    <input type="text"  placeholder="ID" id="Id">
+                    <input type="text"  placeholder="ID" id="ID" v-model="info.ID">
                 </fieldset>
                 <fieldset id="fd2">
-                    <input type="password" placeholder="PW" id="pwd">
+                    <input type="password" placeholder="PW" id="PWD" v-model="info.PWD">
                 </fieldset>
                 </div>
         </form>
             <div class= "box2">
                 <div class="form-group">
-                    <button @click="fnIdCheck" id="button1">login</button>
+                    <button @click="fnLogin" id="button1">login</button>
                 <!-- //바로 사이트 접속 //자바스크립트 -->
                 </div>
-                <div class="form_group">
+                <div class="form-group">
                     <a href="../project/login2.html">
-                    <button >join us</button>
+                    <button>join us</button>
                     </a>
                 <!-- //회원가입하는 창으로 이동 후, 로그인창 //자바스크립트 -->
                 </div>
@@ -104,5 +103,38 @@
 </body>
 </html>
 <script>
+const app = Vue.createApp ({
+    data() {
+        return {
+            info : {
+            Id:"",
+            PWD:"",
+            }
+        }
+    },
+
+methods : {
+    fnILogin() {
+        var self = this;
+        $.ajax({
+            url: "http://localhost:3000/login",
+              dataType: "json",
+              type: "POST",
+               data: JSON.stringify(self.user),
+            contentType : "application/json",
+               success: function (data) {
+                   if(data[0].CNT > 0){
+                    alert("와치에 접속하셨습니다");
+                      location.href="login.html";
+                    }
+                }
+        });
+    }    
+},
+mounted() {
+
+}
+});
+app.mount('#app');
 
 </script>
