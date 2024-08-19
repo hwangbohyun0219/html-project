@@ -125,7 +125,9 @@ methods : {
                success: function (data) {
                    if(data[0].CNT > 0){
                     alert("와치에 접속하셨습니다");
-                      location.href="login.html";
+                    window.location.href = 'login.html';
+                    }else {
+                    alert("와치에 접속할 수 없습니다");
                     }
                 }
         });

@@ -23,6 +23,14 @@
         height:120px;
         margin:650px 600px;
         border-radius: 50%;
+        animation:rotate-animation 9s infinite linear;
+    }
+    @keyframes rotate-animation {
+        from{
+            transform:rotateY(0deg);
+        }to{
+            transform:rotateY(360deg);
+        }
     }
     #hwasung {
         width:140px;
@@ -34,8 +42,8 @@
  </style>
 <body>
     <a href="../project/login_j.html">
-    <input type="image" src="../project_image/jeegoo.jpeg" alt="dispensive clock" id="earth">
-    
+    <input type="image" src="../project_image/jeegoo.jpeg" alt="dispensive clock" id="earth">  
+
     </a>
     <!-- <a href="../project/login_h.html">
         <input type="image" src="../project_image/hwasung.jpeg" alt="student clock" id="hwasung">

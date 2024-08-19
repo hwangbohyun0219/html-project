@@ -87,17 +87,7 @@
                     BIRTHDAY<input type="date" v-model="info.BIRTHDAY">
                 </label>
             </li>
-            <li>
-                <label>
-                    EMAIL<input type="text" id="email" v-model="info.EMAIL">
-                    <select  v-model="info.emailDomain">
-                        <option value="email1">@naver.com</option>
-                        <option value="email2">@gmail.com</option>
-                        <option value="email3">@daum.net</option>
-                        <option value="email4">@nate.com</option>
-                    </select>
-                </label>
-            </li>
+            
             <li>
                 <label>
                     REG_DATE<input type="date" v-model="info.REG_DATE">
@@ -131,7 +121,7 @@
 methods:{
     fnIdCheck() {
         var self = this;
-        if(self.info.ID.length != 6) {
+        if(self.info.ID.length < 6) {
             alert("아이디는 6글자 이상만 허용합니다");
             return;
         }
@@ -140,11 +130,11 @@ methods:{
                     url: url,
                     dataType: "json",
                     type: "GET",
-                    success: function data() {
+                    success: function(data) {
                         if(data[0].CNT > 0) {
                             alert("이미 사용중인 아이디입니다");
                         }else {
-                            alert("사용가능한 아이디입니다");
+                            alert("사용 가능한 아이디입니다");
                             self.isCheck=true;
                         }
                     }
@@ -158,13 +148,16 @@ methods:{
             alert("중복체크가 안 되었습니다");
             return;
         }
+        console.log(self.info);
         $.ajax({
                     url: "http://localhost:3000/insert",
+                    dataType: "json",
                     type: "POST",
                     data: JSON.stringify(self.info),
                     contentType: "application/json",
                     success: function(data) {
                         alert("회원가입에 성공했습니다");
+                        window.location.href = 'login.html';
                     },
                     error: function() {
                         alert("회원가입에 실패했습니다");

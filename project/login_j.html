@@ -25,7 +25,6 @@
         display:flex;
         text-align:center;
         font-size:70px;
-        
      }
      #sidebar {
         width:250px;
@@ -45,6 +44,8 @@
         background-color:gray;
         clear:left;
         font-size:20px;
+        text-align: center;
+        padding-top:20px;
      }
      #home {
         width:67px;
@@ -54,11 +55,41 @@
      #clock1 {
       width:330px;
       height:330px;
+      padding:20px;
      }
      #clock2 {
       width:330px;
       height:330px;
+      padding:20px;
      }
+     .prod-list .caption1{
+      position:absolute;
+      top:200px;
+      width:320px;
+      height:320px;
+      padding-top:50px;
+      padding-left: 30px;
+      padding-right: 30px;
+      background:rgba(58, 57, 57, 0.6);
+      opacity:0;
+      transition: all 0.5s ease-in-out;
+      z-index:10;
+     }
+     .prod-list li {
+      float:left;
+      padding:0;
+      margin:10px;
+      overflow:hidden;
+      position:relative;
+     }
+     .prod-list:hover .caption1 {
+      opacity:1;
+      transform:translateY(-200px);
+     }
+     .prod-list .caption1 h3, .prod-list .caption1 p {
+      color:#fff;
+     }
+
 </style>
 <body>
     <div id="container">
@@ -71,8 +102,24 @@
             </a>
          </sidebar>
     <contents id="contents">
-        <input type="image" value="CLOCK1" src="../project_image/clock1.PNG" id="clock1">
-        <input type="image" value="CLOCK2" src="../project_image/clock2.PNG" id="clock2">    
+      <ul class="prod-list">
+         <li>
+            <input type="image" value="CLOCK2" src="../project_image/clock2.PNG" id="clock1">
+               <div class="caption1">
+                  <h3>문 페이즈 레트로그레이드 데이트</h3>
+                  <p>VACHERON CONSTANTIN</p>
+                  <p>PRICE</p>
+               </div>
+         </li> 
+            <li> 
+               <input type="image" value="CLOCK3" src="../project_image/clock3.PNG" id="clock2">  
+                  <div class="caption2">
+                     <h3>NAME</h3>
+                     <p>BRAND</p>
+                     <p></p>
+                  </div>
+            </li> 
+      </ul>   
     </contents>
     <footer id="footer">
       | 제작자 | Hyun HwangBo |
