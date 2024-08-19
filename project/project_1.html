@@ -16,6 +16,11 @@
         padding : 5px 5px;
         background-color : gainsboro;
         margin : 5px 60px;
+        border-radius: 7px;
+    }
+    .form-group button:hover {
+        background-color:#222;
+        color:#fff;
     }
     input {
         font-family : "Gugi", sans-serif;
@@ -89,12 +94,12 @@
         </form>
             <div class= "box2">
                 <div class="form-group">
-                    <button @click="fnLogin" id="button1">login</button>
+                    <button @click="fnLogin">login</button>
                 <!-- //바로 사이트 접속 //자바스크립트 -->
                 </div>
                 <div class="form-group">
                     <a href="../project/login2.html">
-                    <button>join us</button>
+                        <button>join us</button>
                     </a>
                 <!-- //회원가입하는 창으로 이동 후, 로그인창 //자바스크립트 -->
                 </div>
@@ -114,13 +119,13 @@ const app = Vue.createApp ({
     },
 
 methods : {
-    fnILogin() {
+    fnLogin() {
         var self = this;
         $.ajax({
             url: "http://localhost:3000/login",
               dataType: "json",
               type: "POST",
-               data: JSON.stringify(self.user),
+               data: JSON.stringify(self.info),
             contentType : "application/json",
                success: function (data) {
                    if(data[0].CNT > 0){

@@ -22,15 +22,12 @@
         width:100%;
         height:120px;
         background-color:aliceblue;
-        display:flex;
-        text-align:center;
-        font-size:70px;
         
      }
      #sidebar {
         width:250px;
         height:800px;
-        background-color:gainsboro;
+        background-color:whitesmoke;
         float:left;
      }
      #contents {
@@ -44,30 +41,109 @@
         height:100px;
         background-color:gray;
         clear:left;
-     }
-     #cart {
-        width:67px;
-        height:67px;
+        font-size:20px;
+        text-align: center;
+        padding-top:20px;
      }
      #home {
         width:67px;
         height:67px;
         border-radius:50%;
      }
+     #clock1 {
+      width:330px;
+      height:330px;
+      padding:20px;
+     }
+     #clock2 {
+      width:330px;
+      height:330px;
+      padding:20px;
+     }
+     .prod-list .caption1{
+      position:absolute;
+      top:200px;
+      width:320px;
+      height:320px;
+      padding-top:50px;
+      padding-left: 30px;
+      padding-right: 30px;
+      background:rgba(58, 57, 57, 0.6);
+      opacity:0;
+      transition: all 0.5s ease-in-out;
+      z-index:10;
+     }
+     .prod-list li {
+      float:left;
+      padding:0;
+      margin:10px;
+      overflow:hidden;
+      position:relative;
+     }
+     .prod-list:hover .caption1{
+      opacity:1;
+      transform:translateY(-200px);
+     }
+     .prod-list .caption1 h3, .prod-list .caption1 p{
+      color:#fff;
+     }
+     .side_menu {
+        list-style:none;
+        font-size:30px;
+        width:300px;
+        margin:50px 30px;
+     }
+    .side_menu li {
+        border:1px solid #222;
+        padding:20px 40px;
+        margin:5px;
+     }
+     #watch {
+      margin:10px 490px;
+      width:200px;
+      height:100px;
+     }
+     a {
+        color:#222;
+        text-decoration: none;
+     }
+     a:hover {
+        color:#fff;
+     }
 </style>
 <body>
     <div id="container">
     <header id="header">
-      <center>watch</center>
+      <img src="../project_image/consta.PNG" id="watch">
     </header>
         <sidebar id="sidebar">
-            <a href="../project/login.html">
-                <input type="image" src="../project_image/blackhole.jpg" alt="HOME" id="home">
+            <ul class="side_menu">
+               <li><a href="../project/login.html">MAIN</a></li>
+               <li><a href="../project/login_j.html">Earth</a></li>
+               <li><a href="../project/login_m.html">Jupiter</a></li>
+               <li><a href="../project/login_w.html">Neptune</a></li>
+            </ul>
             </a>
          </sidebar>
-    <contents id="contents" class="">
-        <input type="image" value="CLOCK1" src="../project_image/clock1.PNG">
-        <input type="image" value="CLOCK2" src="../project_image/clock2.PNG">    
+    <contents id="contents">
+      <ul class="prod-list">
+         <li>
+            <input type="image" value="CLOCK2" src="../project_image/clock2.PNG" id="clock1">
+               <div class="caption1">
+                  <h3>문 페이즈 레트로그레이드 데이트</h3>
+                  <p>VACHERON CONSTANTIN</p>
+                  <p>₩73.500.000</p>
+               </div>
+         </li> 
+            <li> 
+               <input type="image" value="CLOCK3" src="../project_image/clock3.PNG" id="clock2">  
+                  <div class="caption1">
+                     <h3>투르비용 크로노그래프 엑설런스 플래타인 컬렉션</h3>
+                     <p>VACHERON CONSTANTIN</p>
+                     <p>₩126.000.000</p>
+                  </div>
+            </li> 
+      </ul>   
     </contents>
     <footer id="footer">
       | 제작자 | Hyun HwangBo |

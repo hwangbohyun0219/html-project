@@ -9,6 +9,13 @@
  <style>
     @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
 
+    @keyframes rotate-animation {
+        from{
+            transform:rotateY(0deg);
+        }to{
+            transform:rotateY(360deg);
+        }
+    }
     body, input {
         font-family : "Gugi", sans-serif;
         font-weight : 400;
@@ -21,32 +28,45 @@
     #earth {
         width:120px;
         height:120px;
-        margin:650px 600px;
+        margin:20px 120px;
         border-radius: 50%;
         animation:rotate-animation 9s infinite linear;
     }
-    @keyframes rotate-animation {
-        from{
-            transform:rotateY(0deg);
-        }to{
-            transform:rotateY(360deg);
-        }
-    }
     #hwasung {
-        width:140px;
-        height:140px;
-        margin:650px 600px;
+        width:180px;
+        height:180px;
+        margin:120px 190px;
         border-radius:50%;
+        animation:rotate-animation 20s infinite linear;
     }
-    
+    #moksung {
+        width:280px;
+        height:280px;
+        margin:-40px 10px;
+        border-radius:50%;
+        animation:rotate-animation 35s infinite linear;
+    }
+    #haewangsung {
+        width:100px;
+        height:100px;
+        margin:-140px 290px;
+        border-radius:50%;
+        animation:rotate-animation 2s infinite linear;
+    }
  </style>
 <body>
     <a href="../project/login_j.html">
     <input type="image" src="../project_image/jeegoo.jpeg" alt="dispensive clock" id="earth">  
-
     </a>
-    <!-- <a href="../project/login_h.html">
+    <a href="../project/login_h.html">
         <input type="image" src="../project_image/hwasung.jpeg" alt="student clock" id="hwasung">
-    </a> -->
+    </a>
+    </a>
+    <a href="../project/login_m.html">
+        <input type="image" src="../project_image/moksung.png" alt="student clock" id="moksung">
+    </a>
+    <a href="../project/login_w.html">
+        <input type="image" src="../project_image/haewangsung.jpeg" alt="student clock" id="haewangsung">
+    </a>
 </body>
 </html>
