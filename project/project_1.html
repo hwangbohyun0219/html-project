@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Document</title>
      <!-- ////1. input가운데 정렬하기 -->
 <style>
@@ -47,8 +49,8 @@
         border-color : grey;
         padding:30px 30px;
         background-color : grey;
-        display: flex;
-    }
+        display: flex;  
+        }
     fieldset {
         margin : 120px 80px;
         border : none;
@@ -108,15 +110,15 @@
 </body>
 </html>
 <script>
-const app = Vue.createApp ({
-    data() {
-        return {
-            info : {
-            Id:"",
-            PWD:"",
-            }
-        }
-    },
+    const app = Vue.createApp({
+        data() {
+            return {
+                info : {
+                    ID : "", 
+                    PWD : "" 
+                }
+            };
+        },
 
 methods : {
     fnLogin() {
@@ -129,19 +131,17 @@ methods : {
             contentType : "application/json",
                success: function (data) {
                    if(data[0].CNT > 0){
-                    alert("와치에 접속하셨습니다");
+                    alert("접속하셨습니다");
                     window.location.href = 'login.html';
                     }else {
-                    alert("와치에 접속할 수 없습니다");
+                    alert("접속할 수 없습니다 회원가입 하세요");
                     }
                 }
         });
     }    
 },
 mounted() {
-
 }
 });
 app.mount('#app');
-
 </script>
