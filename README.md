@@ -10,7 +10,7 @@
 --------
 #### 개발자
 + 황보 현
-
+--------
 #### 프로젝트 결과물
 ![로그인](https://github.com/hwangbohyun0219/sample_git2/blob/main/jeopsok.PNG)
 ![중복체크](https://github.com/hwangbohyun0219/sample_git2/blob/main/multicheck.PNG)
