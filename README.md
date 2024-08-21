@@ -8,7 +8,8 @@
 + 2024.08.12 ~ 2024.08.20 (주말과 연휴 제외 일주일)
 
 --------
-
+#### 개발자
++ 황보 현
 
 #### 프로젝트 결과물
 ![로그인](https://github.com/hwangbohyun0219/sample_git2/blob/main/jeopsok.PNG)
