@@ -9,6 +9,4 @@
 --------
 
 #### 프로젝트 결과물
-![샘플](https://github.com/ljs1990-tj2/imageSample/blob/main/%EC%BA%A1%EC%B2%98.PNG)
 
-![이미지네임](https://github.com/ljs1990-tj2/imageSample/blob/main/yu.jpg)
