@@ -9,5 +9,8 @@
 --------
 
 #### 프로젝트 결과물
-![결과물1](https://github.com/hwangbohyun0219/sample_git2)
 ![로그인](https://github.com/hwangbohyun0219/sample_git2/blob/main/jeopsok.PNG)
+![중복체크](https://github.com/hwangbohyun0219/sample_git2/blob/main/multicheck.PNG)
+![회원가입](https://github.com/hwangbohyun0219/sample_git2/blob/main/joinus2.PNG)
+![메인-각 행성에 애니메이션 추가](https://github.com/hwangbohyun0219/sample_git2/blob/main/Main.PNG)
+![시계에 커서를 올리면 설명란이 사진 위에 올라옵니다](https://github.com/hwangbohyun0219/sample_git2/blob/main/sigae.PNG)
